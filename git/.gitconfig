@@ -1,0 +1,10 @@
+[user]
+	name = Stefan Totev
+	email = stefan.totev92@gmail.com
+	signingkey = 903ECC25B05DE7CB
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = main
+[push]
+	default = current
