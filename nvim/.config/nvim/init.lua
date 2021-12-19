@@ -1,4 +1,4 @@
--- vim: set path+=./:
+-- vim: set path+=./lua:
 
 local cmd = vim.cmd
 local o = vim.o
@@ -45,5 +45,5 @@ map('<leader>q', '<Esc>:q<CR>')
 noremap('<c-s>', '<esc>:w<cr>')
 inoremap('<c-s>', '<esc>:w<cr>')
 nnoremap('<leader>r', ':so ~/.config/nvim/init.lua<CR>')
-nnoremap('k', 'j')
-nnoremap('j', 'k')
+noremap('<c-e>', '$')
+noremap('<c-a>', '^')
