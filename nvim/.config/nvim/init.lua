@@ -16,11 +16,11 @@ require "paq" {
 	'ayu-theme/ayu-vim';
 }
 
-cmd 'syntax enable'
+cmd [[syntax enable]]
 o.background = "dark"
 o.termguicolors = true
 vim.g.gruvbox_contrast_dark="hard"
-cmd "colorscheme gruvbox"
+cmd [[colorscheme gruvbox]]
 
 wo.foldenable = false
 
