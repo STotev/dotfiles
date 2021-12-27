@@ -24,6 +24,11 @@ zplug load
 
 # Options
 setopt autocd
+setopt hist_ignore_all_dups
+
+# Exports
+export EDITOR='nvim'
+
 
 # Manjaro Stuff
 # Use powerline
