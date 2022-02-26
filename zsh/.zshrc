@@ -1,3 +1,5 @@
+bindkey -e
+
 # Load zplug
 source ~/.zplug/init.zsh
 
@@ -47,23 +49,28 @@ setopt share_history
 setopt inc_append_history
 setopt hist_ignore_all_dups
 
+stty -ixon
 
 # Exports
 export EDITOR='nvim'
+export LC_ALL=en_GB.UTF-8
+
+export FZF_DEFAULT_COMMAND="(git ls-files --others --exclude-standard --cached 2> /dev/null || rg --files --no-ignore --hidden --follow --glob '!.git/*' --glob '!node_modules/*' 2>&1)"
+export FZF_DEFAULT_OPTS='--multi --bind=ctrl-k:down,ctrl-l:up'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="$FZF_DEFAULT_OPTS"
+export FZF_CTRL_R_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_R_OPTS="$FZF_DEFAULT_OPTS --preview 'echo {}' --preview-window down:3:hidden:wrap:noborder --bind '?:toggle-preview' --bind 'ctrl-y:execute-silent(echo -n {2..} | xsel --clipboard --input)+abort' --header 'Press CTRL-Y to copy command into clipboard' --border"
+#export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+#export FZF_ALT_C_OPTS="$FZF_DEFAULT_OPTS"
+
+# go
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
 
-# Manjaro Stuff
-# Use powerline
-#USE_POWERLINE="true"
-# Source manjaro-zsh-configuration
-#if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
-#  source /usr/share/zsh/manjaro-zsh-config
-#fi
-# Use manjaro zsh prompt
-#if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
-#  source /usr/share/zsh/manjaro-zsh-prompt
-#fi
+# fnm
+export PATH=/home/stotev/.fnm:$PATH
+eval "`fnm env`"
 
 # Aliases
 alias e="nvim"
@@ -82,3 +89,21 @@ alias pbpaste='xsel --clipboard --output'
 alias ws="cd ~/Workspace"
 alias dotf="cd ~/.dotfiles"
 alias path='echo $PATH | tr -s ":" "\n"'
+alias nvpn="nordvpn"
+
+# Keybinds
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+bindkey  "^[[3~"  delete-char
+
+# Manjaro Stuff
+# Use powerline
+#USE_POWERLINE="true"
+# Source manjaro-zsh-configuration
+#if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
+#  source /usr/share/zsh/manjaro-zsh-config
+#fi
+# Use manjaro zsh prompt
+#if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
+#  source /usr/share/zsh/manjaro-zsh-prompt
+#fi
