@@ -76,7 +76,7 @@ eval "`fnm env`"
 alias e="nvim"
 alias zshconf="e ~/.zshrc"
 alias zshreload="source ~/.zshrc"
-alias ls='LC_COLLATE=C ls -A --color -h --group-directories-first'
+alias ls='LC_COLLATE=C gls -A --color -h --group-directories-first'
 alias ll='ls -l'
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ips="ip a | grep 'inet ' | sed -e 's/^.*inet //g' -e 's/\/.*//g' | grep -v '127.0.0.1'"
@@ -90,6 +90,9 @@ alias ws="cd ~/Workspace"
 alias dotf="cd ~/.dotfiles"
 alias path='echo $PATH | tr -s ":" "\n"'
 alias nvpn="nordvpn"
+
+alias gs="git status"
+alias gd="git diff"
 
 # Keybinds
 bindkey  "^[[H"   beginning-of-line
