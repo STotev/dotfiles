@@ -54,6 +54,7 @@ stty -ixon
 # Exports
 export EDITOR='nvim'
 export LC_ALL=en_GB.UTF-8
+export GPG_TTY=$(tty)
 
 export FZF_DEFAULT_COMMAND="(git ls-files --others --exclude-standard --cached 2> /dev/null || rg --files --no-ignore --hidden --follow --glob '!.git/*' --glob '!node_modules/*' 2>&1)"
 export FZF_DEFAULT_OPTS='--multi --bind=ctrl-k:down,ctrl-l:up'
@@ -98,6 +99,8 @@ alias gd="git diff"
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
+
+
 
 # Manjaro Stuff
 # Use powerline
