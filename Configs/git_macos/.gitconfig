@@ -1,0 +1,15 @@
+[user]
+	name = Stefan Totev
+	email = stefan.totev92@gmail.com
+	signingkey = 65979E715E0702BE
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = main
+[push]
+    default = current
+	recurseSubmodules = check
+[tag]
+	gpgSign = true
+[pull]
+	rebase = false

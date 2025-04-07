@@ -70,10 +70,18 @@ export PATH=$PATH:$HOME/go/bin
 
 # fnm
 export PATH=/home/stotev/.fnm:$PATH
-eval "`fnm env`"
+eval "$(fnm env --use-on-cd --shell zsh)"
+
+# gpg
+export GPG_TTY=$(tty)
+
+# pyenv + pyenv-virtualenv
+#eval "$(pyenv init -)"
+# if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 # Aliases
 alias e="nvim"
+alias k="kubectl"
 alias zshconf="e ~/.zshrc"
 alias zshreload="source ~/.zshrc"
 alias ls='LC_COLLATE=C ls -A --color -h --group-directories-first'
@@ -82,6 +90,8 @@ alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ips="ip a | grep 'inet ' | sed -e 's/^.*inet //g' -e 's/\/.*//g' | grep -v '127.0.0.1'"
 alias kittyconf="e ~/.config/kitty/kitty.conf"
 alias vimconf="e ~/.config/nvim/init.lua"
+alias sshconf="e ~/.ssh/config"
+alias gitconf="e ~/.gitconfig"
 
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
