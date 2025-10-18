@@ -79,6 +79,11 @@ export PATH="$PATH:$HOME/.dotnet/tools"
 # gpg
 export GPG_TTY=$(tty)
 
+# pyenv
+#export PYENV_ROOT="$HOME/.pyenv"
+#[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init - zsh)"
+
 # pyenv + pyenv-virtualenv
 #eval "$(pyenv init -)"
 # if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
@@ -120,3 +125,7 @@ fpath=(~/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
+
+
+# Added by get-aspire-cli.sh
+export PATH="$HOME/.aspire/bin:$PATH"

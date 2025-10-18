@@ -230,8 +230,13 @@ run = [
   "layout floating",
   "move-node-to-workspace T"
 ]
+
 [[on-window-detected]]
 if.app-id = "com.apple.finder"
+run = ["layout floating"]
+
+[[on-window-detected]]
+if.app-id = "com.apple.ActivityMonitor"
 run = ["layout floating"]
 
 [[on-window-detected]]
@@ -247,8 +252,12 @@ if.app-id = "com.jetbrains.rider"
 run = ["move-node-to-workspace R"]
 
 [[on-window-detected]]
-if.app-id = "com.jetbrains.phpstorm"
+if.app-id = "com.jetbrains.PhpStorm"
 run = ["move-node-to-workspace P"]
+
+[[on-window-detected]]
+if.app-id = "com.jetbrains.intellij"
+run = ["move-node-to-workspace I"]
 
 [[on-window-detected]]
 if.app-id = "com.microsoft.teams2"
@@ -266,3 +275,6 @@ run = ["move-node-to-workspace C"]
 if.app-id = "com.syntevo.smartgit"
 run = ["move-node-to-workspace G"]
 
+[[on-window-detected]]
+if.app-id = "org.mozilla.firefox"
+run = ["move-node-to-workspace Y"]
