@@ -1,7 +1,7 @@
 [user]
 	name = Stefan Totev
 	email = stefan.totev92@gmail.com
-	signingkey = 903ECC25B05DE7CB
+	signingkey = BD92D2B53498DB8F
 [commit]
 	gpgsign = true
 [init]
