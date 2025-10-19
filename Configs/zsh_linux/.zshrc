@@ -64,6 +64,10 @@ export FZF_CTRL_R_OPTS="$FZF_DEFAULT_OPTS --preview 'echo {}' --preview-window d
 #export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 #export FZF_ALT_C_OPTS="$FZF_DEFAULT_OPTS"
 
+
+# nvim
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
 # go
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
