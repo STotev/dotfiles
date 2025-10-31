@@ -64,6 +64,8 @@ export FZF_CTRL_R_OPTS="$FZF_DEFAULT_OPTS --preview 'echo {}' --preview-window d
 #export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 #export FZF_ALT_C_OPTS="$FZF_DEFAULT_OPTS"
 
+# cargo / Rust
+export PATH=$PATH:$HOME/.cargo/bin
 
 # nvim
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
@@ -73,15 +75,23 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
 
 # fnm
-export PATH=/home/stotev/.fnm:$PATH
 eval "$(fnm env --use-on-cd --shell zsh)"
 
 # gpg
 export GPG_TTY=$(tty)
 
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 # pyenv + pyenv-virtualenv
 #eval "$(pyenv init -)"
 # if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
+# dotnet
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$DOTNET_ROOT:$PATH
+
 
 # Aliases
 alias e="nvim"
